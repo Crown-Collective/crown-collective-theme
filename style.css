@@ -7,7 +7,7 @@ Description: Block theme for crowncollective.run. Each section of the site (Crow
 Requires at least: 6.6
 Tested up to: 6.9
 Requires PHP: 7.4
-Version: 0.1.1
+Version: 0.1.2
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: crown-collective
@@ -192,4 +192,153 @@ Text Domain: crown-collective
 @media (max-width: 600px) {
 	.cc-corral { flex-wrap: wrap !important; padding: 1.5rem; }
 	.cc-corral-badge { width: 72px; height: 72px; font-size: 2.4rem; }
+}
+
+/* ---------- Bands (Why us, closing call to action) ---------- */
+
+.cc-band-navy :where(h1, h2) em,
+.cc-band-clay :where(h1, h2) em {
+	color: var(--wp--preset--color--gold);
+}
+
+.cc-statement {
+	font-weight: 400 !important;
+	max-width: 1000px;
+}
+
+.cc-on-dark-muted {
+	color: rgba(251, 244, 233, 0.82);
+	max-width: 720px;
+}
+
+/* ---------- Cards (case studies, race lists, pricing, found) ---------- */
+
+.cc-cards {
+	align-items: stretch !important;
+	gap: var(--wp--preset--spacing--40);
+}
+
+.cc-case,
+.cc-card {
+	border-radius: 24px;
+	padding: 2.25rem !important;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.cc-case > *,
+.cc-card > * {
+	margin: 0 !important;
+}
+
+.cc-case .wp-block-image {
+	border-radius: 16px;
+	overflow: hidden;
+	background: rgba(27, 42, 74, 0.18);
+	min-height: 240px;
+}
+
+.cc-case .wp-block-image img {
+	width: 100%;
+	height: 260px;
+	object-fit: cover;
+	display: block;
+}
+
+.cc-pill-cream {
+	background: var(--wp--preset--color--cream);
+	color: var(--wp--preset--color--teal);
+}
+
+.cc-pill-navy {
+	background: var(--wp--preset--color--navy);
+	color: var(--wp--preset--color--cream);
+}
+
+.cc-case-quote {
+	font-family: var(--wp--preset--font-family--fraunces);
+	font-style: italic;
+	font-size: 1.375rem;
+	line-height: 1.35;
+}
+
+.cc-case-link {
+	margin-top: auto !important;
+	font-weight: 700;
+}
+
+.cc-case-link a,
+.cc-case-link a:hover {
+	color: inherit;
+}
+
+.cc-list-quote {
+	font-family: var(--wp--preset--font-family--fraunces);
+	font-size: 1.625rem;
+	line-height: 1.35;
+}
+
+.cc-card-grid {
+	gap: 1rem;
+}
+
+.cc-card-grid .cc-card {
+	padding: 1.75rem !important;
+}
+
+.cc-card-title {
+	font-size: 1.75rem;
+}
+
+.cc-price {
+	font-family: var(--wp--preset--font-family--fraunces);
+	font-size: 2.5rem;
+	font-weight: 800;
+	line-height: 1.1;
+}
+
+/* ---------- FAQ ---------- */
+
+.cc-faq {
+	border-bottom: 1px solid var(--wp--preset--color--line);
+	padding: 1.375rem 0;
+	margin: 0 !important;
+}
+
+.cc-faq summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	list-style: none;
+	cursor: pointer;
+	min-height: 44px;
+	font-family: var(--wp--preset--font-family--fraunces);
+	font-size: 1.375rem;
+	font-weight: 600;
+	line-height: 1.25;
+}
+
+.cc-faq summary::-webkit-details-marker { display: none; }
+
+.cc-faq summary::after {
+	content: "+";
+	flex: 0 0 auto;
+	font-family: var(--wp--preset--font-family--dm-sans);
+	font-size: 1.6rem;
+	font-weight: 500;
+	color: var(--wp--preset--color--clay);
+}
+
+.cc-faq[open] summary::after { content: "–"; }
+
+.cc-faq summary:focus-visible {
+	outline: 3px solid var(--wp--preset--color--gold);
+	outline-offset: 4px;
+	border-radius: 6px;
+}
+
+.cc-faq > p {
+	padding-top: 0.75rem;
 }
