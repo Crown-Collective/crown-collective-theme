@@ -11,6 +11,7 @@
 	"templateParts": [
 		{ "name": "header", "title": "Header", "area": "header" },
 		{ "name": "footer", "title": "Footer", "area": "footer" },
+		{ "name": "header-consulting", "title": "Header (Consulting)", "area": "header" },
 		{ "name": "footer-consulting", "title": "Footer (Consulting)", "area": "footer" }
 	],
 	"settings": {
