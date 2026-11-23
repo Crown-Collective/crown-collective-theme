@@ -24,6 +24,14 @@ function crown_collective_enqueue() {
 	$version = wp_get_theme()->get( 'Version' );
 	wp_enqueue_style( 'crown-collective-fonts', crown_collective_fonts_url(), array(), null );
 	wp_enqueue_style( 'crown-collective', get_stylesheet_uri(), array(), $version );
+
+	$forms_css = get_theme_file_path( 'assets/css/forms.css' );
+	wp_enqueue_style(
+		'crown-collective-forms',
+		get_theme_file_uri( 'assets/css/forms.css' ),
+		array( 'crown-collective' ),
+		file_exists( $forms_css ) ? (string) filemtime( $forms_css ) : $version
+	);
 }
 add_action( 'wp_enqueue_scripts', 'crown_collective_enqueue' );
 

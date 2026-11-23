@@ -1,0 +1,112 @@
+/* Crown Collective: form styles (Gravity Forms). Loaded by functions.php. */
+
+/* ---------- Consulting intake form ---------- */
+
+.cc-intake-wrap .gform_wrapper { font-family: var(--wp--preset--font-family--dm-sans); color: var(--wp--preset--color--navy); }
+.cc-intake-wrap .gform_wrapper .gform_description { color: var(--wp--preset--color--ink-muted); font-size: 15px; }
+.cc-intake-wrap .gform_wrapper .gform_fields { row-gap: 22px !important; column-gap: 18px !important; }
+
+/* Step headings (01 About you, 02 About your race, ...) */
+.cc-intake-wrap .gfield--type-section.cc-step {
+	border: 0 !important;
+	margin-top: 40px !important;
+	padding: 0 !important;
+}
+.cc-intake-wrap .gfield--type-section.cc-step .gsection_title {
+	font-family: var(--wp--preset--font-family--fraunces);
+	font-size: clamp(26px, 3vw, 32px);
+	font-weight: 600;
+	margin: 0;
+	padding-top: 24px;
+	border-top: 2px solid var(--wp--preset--color--line);
+}
+.cc-intake-wrap .gfield--type-section .gsection_description { color: var(--wp--preset--color--ink-muted); padding-top: 4px; }
+.cc-intake-wrap .gfield--type-section.cc-step-dark .gsection_title { border-top-color: var(--wp--preset--color--gold); }
+
+/* Labels and inputs */
+.cc-intake-wrap .gfield_label,
+.cc-intake-wrap .gfield_label.gform-field-label { font-weight: 700 !important; font-size: 15px !important; color: var(--wp--preset--color--navy); }
+.cc-intake-wrap .gfield_required { color: var(--wp--preset--color--clay) !important; }
+.cc-intake-wrap .gform_wrapper input[type="text"],
+.cc-intake-wrap .gform_wrapper input[type="email"],
+.cc-intake-wrap .gform_wrapper input[type="tel"],
+.cc-intake-wrap .gform_wrapper input[type="url"],
+.cc-intake-wrap .gform_wrapper select,
+.cc-intake-wrap .gform_wrapper textarea {
+	font-family: inherit;
+	font-size: 16px !important;
+	color: var(--wp--preset--color--navy);
+	background: #FFFFFF;
+	border: 1.5px solid #D9C9AE !important;
+	border-radius: 12px !important;
+	padding: 13px 14px !important;
+	width: 100%;
+	min-height: 50px;
+	box-sizing: border-box;
+}
+.cc-intake-wrap .gform_wrapper :is(input, select, textarea):focus {
+	outline: 3px solid var(--wp--preset--color--gold) !important;
+	outline-offset: 1px;
+	border-color: var(--wp--preset--color--navy) !important;
+}
+
+/* Service and fuel choices as pills */
+.cc-intake-wrap .cc-pills .gfield_checkbox,
+.cc-intake-wrap .cc-pills .gfield_radio,
+.cc-intake-wrap .cc-cards-choice .gfield_radio { display: flex !important; flex-wrap: wrap; gap: 10px; }
+.cc-intake-wrap .cc-pills .gchoice,
+.cc-intake-wrap .cc-cards-choice .gchoice { position: relative; margin: 0 !important; }
+.cc-intake-wrap :is(.cc-pills, .cc-cards-choice) .gchoice input {
+	position: absolute; opacity: 0; width: 1px; height: 1px;
+}
+.cc-intake-wrap .cc-pills .gchoice label {
+	display: inline-flex !important; align-items: center;
+	min-height: 46px; padding: 10px 18px !important; margin: 0 !important;
+	border-radius: 999px; border: 2px solid #D9C9AE;
+	background: var(--wp--preset--color--cream);
+	font-size: 15px; font-weight: 500; cursor: pointer; max-width: none !important;
+}
+.cc-intake-wrap .cc-pills .gchoice input:checked + label {
+	background: var(--wp--preset--color--navy); border-color: var(--wp--preset--color--navy);
+	color: var(--wp--preset--color--cream); font-weight: 700;
+}
+.cc-intake-wrap .cc-pills .gchoice input:checked + label::before { content: "✓ "; white-space: pre; }
+.cc-intake-wrap :is(.cc-pills, .cc-cards-choice) .gchoice input:focus-visible + label {
+	outline: 3px solid var(--wp--preset--color--gold); outline-offset: 2px;
+}
+
+/* Timeline choices as cards */
+.cc-intake-wrap .cc-cards-choice .gchoice { flex: 1 1 200px; }
+.cc-intake-wrap .cc-cards-choice .gchoice label {
+	display: block !important; height: 100%; box-sizing: border-box; margin: 0 !important;
+	padding: 18px 20px !important; border-radius: 16px; border: 2px solid var(--wp--preset--color--line);
+	background: var(--wp--preset--color--cream);
+	font-family: var(--wp--preset--font-family--fraunces); font-size: 18px; font-weight: 600; cursor: pointer; max-width: none !important;
+}
+.cc-intake-wrap .cc-cards-choice .gchoice input:checked + label { border-color: var(--wp--preset--color--clay); background: #FBE3D6; }
+
+/* Submit button */
+.cc-intake-wrap .gform_footer { margin-top: 32px !important; }
+.cc-intake-wrap .gform_wrapper .gform_button {
+	background: var(--wp--preset--color--clay) !important; color: #FFFFFF !important;
+	border: 0 !important; border-radius: 999px !important;
+	font-family: inherit; font-size: 18px !important; font-weight: 700 !important;
+	padding: 18px 34px !important; cursor: pointer; min-height: 56px;
+}
+.cc-intake-wrap .gform_wrapper .gform_button:hover { background: var(--wp--preset--color--navy) !important; }
+
+/* Errors */
+.cc-intake-wrap .gform_validation_errors { border-radius: 16px; }
+.cc-intake-wrap .gfield_error :is(input, select, textarea) { border-color: var(--wp--preset--color--clay) !important; }
+
+/* Thank-you message */
+.cc-thanks { display: flex; flex-direction: column; gap: 18px; padding: 24px 0 48px; }
+.cc-thanks h2 { font-family: var(--wp--preset--font-family--fraunces); font-size: clamp(40px, 6vw, 72px); line-height: 1; margin: 0; }
+.cc-thanks h2 em { color: var(--wp--preset--color--clay); font-weight: 400; }
+.cc-thanks p { margin: 0; font-size: 19px; color: var(--wp--preset--color--ink-muted); }
+.cc-thanks .cc-thanks-pill { align-self: flex-start; background: var(--wp--preset--color--sage); color: #1F3326; font-weight: 700; font-size: 14px; padding: 6px 14px; border-radius: 999px; }
+.cc-thanks a { font-weight: 700; color: var(--wp--preset--color--clay); }
+
+@media (max-width: 640px) {
+	.cc-intake-wrap .gform_wrapper .gfield { grid-column: 1 / -1 !important; }
+}
