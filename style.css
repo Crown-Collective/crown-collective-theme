@@ -1,0 +1,179 @@
+/*
+Theme Name: Crown Collective
+Theme URI: https://crowncollective.run
+Author: Crown Collective
+Author URI: https://crowncollective.run
+Description: Block theme for crowncollective.run. Each section of the site (Crown Collective, Consulting, Around the Crown 10K) carries its own brand through section styles.
+Requires at least: 6.6
+Tested up to: 6.9
+Requires PHP: 7.4
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: crown-collective
+*/
+
+/* ---------- Small labels ---------- */
+
+.is-style-pill {
+	display: inline-block;
+	width: fit-content;
+	padding: 0.35rem 0.9rem;
+	border-radius: 999px;
+	background: var(--wp--preset--color--gold);
+	color: var(--wp--preset--color--navy);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+}
+
+.is-style-eyebrow {
+	color: var(--wp--preset--color--clay);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+/* ---------- Consulting look ---------- */
+
+/* One or two italic words per headline, in clay red */
+.is-style-consulting :where(h1, h2) em {
+	color: var(--wp--preset--color--clay);
+	font-weight: 400;
+}
+
+.is-style-consulting .is-style-outline .wp-block-button__link {
+	background: transparent;
+	color: var(--wp--preset--color--navy);
+	border: 2px solid var(--wp--preset--color--navy);
+}
+
+/* Photo strip in the hero */
+.cc-photo-strip .wp-block-image img {
+	width: 100%;
+	height: 380px;
+	object-fit: cover;
+	border-radius: 20px;
+}
+
+.cc-photo-strip .wp-block-image:not(:has(img[src])) {
+	height: 380px;
+	border-radius: 20px;
+	background: #3A4256;
+}
+
+.cc-photo-strip .has-gold-background-color {
+	min-height: 380px;
+	border-radius: 20px;
+	padding: 1.75rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* ---------- Corrals (accordions) ---------- */
+
+.cc-corral {
+	background: var(--wp--preset--color--white);
+	border-radius: 24px;
+	padding: 1.75rem 2rem;
+	gap: 1.75rem;
+}
+
+.cc-corral-badge {
+	flex: 0 0 auto;
+	width: 88px;
+	height: 88px;
+	margin: 0;
+	border-radius: 18px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--wp--preset--font-family--fraunces);
+	font-size: 3rem;
+	font-weight: 800;
+	line-height: 1;
+}
+
+.cc-corral-badge::before {
+	content: "Corral";
+	font-family: var(--wp--preset--font-family--dm-sans);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	margin-bottom: 0.15rem;
+}
+
+.cc-corral-a { background: var(--wp--preset--color--clay); color: #FFFFFF; }
+.cc-corral-b { background: var(--wp--preset--color--gold); color: var(--wp--preset--color--navy); }
+.cc-corral-c { background: var(--wp--preset--color--teal); color: #FFFFFF; }
+
+.cc-corral .wp-block-details {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.cc-corral .wp-block-details summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	list-style: none;
+	cursor: pointer;
+	min-height: 48px;
+	font-family: var(--wp--preset--font-family--fraunces);
+	font-size: var(--wp--preset--font-size--x-large);
+	font-weight: 600;
+	line-height: 1.1;
+}
+
+.cc-corral .wp-block-details summary::-webkit-details-marker { display: none; }
+
+.cc-corral .wp-block-details summary::after {
+	content: "+";
+	flex: 0 0 48px;
+	height: 48px;
+	border: 2px solid currentColor;
+	border-radius: 999px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--wp--preset--font-family--dm-sans);
+	font-size: 1.6rem;
+	font-weight: 500;
+}
+
+.cc-corral .wp-block-details[open] summary::after { content: "–"; }
+
+.cc-corral .wp-block-details summary:focus-visible {
+	outline: 3px solid var(--wp--preset--color--gold);
+	outline-offset: 4px;
+	border-radius: 8px;
+}
+
+.cc-corral .wp-block-list {
+	list-style: none;
+	padding: 0;
+	margin-top: 1rem;
+}
+
+.cc-corral .wp-block-list li {
+	padding: 1rem 0;
+	border-top: 1px solid var(--wp--preset--color--line);
+	color: var(--wp--preset--color--ink-muted);
+}
+
+.cc-corral .wp-block-list li strong {
+	display: block;
+	font-family: var(--wp--preset--font-family--fraunces);
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: var(--wp--preset--color--navy);
+}
+
+@media (max-width: 600px) {
+	.cc-corral { flex-wrap: wrap !important; padding: 1.5rem; }
+	.cc-corral-badge { width: 72px; height: 72px; font-size: 2.4rem; }
+}
