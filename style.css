@@ -7,7 +7,7 @@ Description: Block theme for crowncollective.run. Each section of the site (Crow
 Requires at least: 6.6
 Tested up to: 6.9
 Requires PHP: 7.4
-Version: 0.1.5
+Version: 0.1.6
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: crown-collective
@@ -48,31 +48,32 @@ Text Domain: crown-collective
 	border: 2px solid var(--wp--preset--color--navy);
 }
 
-/* Photo strip in the hero: every tile the same height */
+/* Photo strip in the hero: every tile the same height, photos fill their tile */
 .cc-photo-strip {
 	align-items: stretch !important;
 }
 
 .cc-photo-strip > .wp-block-column {
-	min-height: 340px;
+	position: relative;
+	min-height: 360px;
 	display: flex;
 	flex-direction: column;
 	border-radius: 20px;
 	overflow: hidden;
 }
 
-.cc-photo-strip .wp-block-image {
-	flex: 1 1 auto;
-	margin: 0;
-	height: 100%;
+.cc-photo-strip > .wp-block-column > .wp-block-image {
+	position: absolute;
+	inset: 0;
+	margin: 0 !important;
 	border-radius: 20px;
-	background: #3A4256;
+	overflow: hidden;
 }
 
 .cc-photo-strip .wp-block-image img {
+	display: block;
 	width: 100%;
 	height: 100%;
-	min-height: 340px;
 	object-fit: cover;
 	border-radius: 20px;
 }
@@ -85,6 +86,25 @@ Text Domain: crown-collective
 
 .cc-photo-strip .has-gold-background-color > * {
 	margin: 0;
+}
+
+/* On phones: one swipeable row instead of five stacked tiles */
+@media (max-width: 781px) {
+	.cc-photo-strip {
+		flex-wrap: nowrap !important;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+		gap: 12px !important;
+		padding-bottom: 8px;
+		scrollbar-width: none;
+	}
+	.cc-photo-strip::-webkit-scrollbar { display: none; }
+	.cc-photo-strip > .wp-block-column {
+		flex: 0 0 72% !important;
+		min-height: 300px;
+		scroll-snap-align: start;
+	}
 }
 
 /* ---------- Corrals (accordions) ---------- */
