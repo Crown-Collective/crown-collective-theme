@@ -7,7 +7,7 @@ Description: Block theme for crowncollective.run. Each section of the site (Crow
 Requires at least: 6.6
 Tested up to: 6.9
 Requires PHP: 7.4
-Version: 0.1.0
+Version: 0.1.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: crown-collective
@@ -48,27 +48,43 @@ Text Domain: crown-collective
 	border: 2px solid var(--wp--preset--color--navy);
 }
 
-/* Photo strip in the hero */
-.cc-photo-strip .wp-block-image img {
-	width: 100%;
-	height: 380px;
-	object-fit: cover;
-	border-radius: 20px;
+/* Photo strip in the hero: every tile the same height */
+.cc-photo-strip {
+	align-items: stretch !important;
 }
 
-.cc-photo-strip .wp-block-image:not(:has(img[src])) {
-	height: 380px;
+.cc-photo-strip > .wp-block-column {
+	min-height: 340px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.cc-photo-strip .wp-block-image {
+	flex: 1 1 auto;
+	margin: 0;
+	height: 100%;
 	border-radius: 20px;
 	background: #3A4256;
 }
 
-.cc-photo-strip .has-gold-background-color {
-	min-height: 380px;
+.cc-photo-strip .wp-block-image img {
+	width: 100%;
+	height: 100%;
+	min-height: 340px;
+	object-fit: cover;
 	border-radius: 20px;
+}
+
+.cc-photo-strip .has-gold-background-color {
 	padding: 1.75rem;
-	display: flex;
-	flex-direction: column;
 	justify-content: space-between;
+	gap: 1rem;
+}
+
+.cc-photo-strip .has-gold-background-color > * {
+	margin: 0;
 }
 
 /* ---------- Corrals (accordions) ---------- */

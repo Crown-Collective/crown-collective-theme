@@ -9,8 +9,8 @@
  * @package crown-collective
  */
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|60"},"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
-<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:paragraph {"className":"is-style-pill"} -->
+<!-- wp:group {"align":"full","className":"is-style-consulting","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|60"},"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
+<div class="wp-block-group alignfull is-style-consulting" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:paragraph {"className":"is-style-pill"} -->
 <p class="is-style-pill">Made in Charlotte by race directors</p>
 <!-- /wp:paragraph -->
 
